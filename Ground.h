@@ -20,6 +20,7 @@ public:
 	//開放
 	void Release() override;
 
+	int GetModelHandle() const { return hModel_; }
 private:
 	int hModel_; //地面モデルのハンドル
 };
