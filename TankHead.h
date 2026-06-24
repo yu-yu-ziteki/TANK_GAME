@@ -8,7 +8,7 @@ public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
 	TankHead(GameObject* parent);
-
+	~TankHead(){}
 	//初期化
 	void Initialize() override;
 
@@ -21,6 +21,6 @@ public:
 	//開放
 	void Release() override;
 private:
-	int hModel_;    //タンクモデルのハンドル
+	int hModel_;    //タンクヘッドモデルのハンドル
 
 };

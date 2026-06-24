@@ -2,13 +2,14 @@
 #include "Engine/GameObject.h"
 
 //テストシーンを管理するクラス
-class Tank
+class Bullet
 	: public GameObject
 {
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
-	Tank(GameObject* parent);
+	Bullet(GameObject* parent);
+	~Bullet(){}
 
 	//初期化
 	void Initialize() override;
@@ -21,9 +22,10 @@ public:
 
 	//開放
 	void Release() override;
+	void SetMoveVector(XMFLOAT3 move) { move_ = move; }//弾の進行方向をリセットする関数
 
 private:
 	int hModel_;    //タンクモデルのハンドル
-	int camType_;   //カメラの種類
-	void SetFixedCam();
+	XMFLOAT3 move_;//弾の進行方向
+
 };

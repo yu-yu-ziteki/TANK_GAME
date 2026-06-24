@@ -5,6 +5,7 @@
 #include "Engine\\Debug.h"
 #include "Engine\\Camera.h"
 #include "Ground.h"
+#include "TankHead.h"
 
 namespace
 {
@@ -34,6 +35,7 @@ void Tank::Initialize()
 {
 	hModel_ = Model::Load("TankBody.fbx");
 	assert(hModel_ >= 0);
+	Instantiate<TankHead>(this);//親をタンクとして包帯を生成　thisはtank
 }
 
 void Tank::Update()

@@ -1,14 +1,12 @@
 #pragma once
-#include "Engine/GameObject.h"
-
-//テストシーンを管理するクラス
-class Tank
-	: public GameObject
-{
+#include "Engine\\GameObject.h"
+class Enemy :
+    public GameObject {
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
-	Tank(GameObject* parent);
+	Enemy(GameObject* parent);
+	~Enemy(){}
 
 	//初期化
 	void Initialize() override;
@@ -23,7 +21,6 @@ public:
 	void Release() override;
 
 private:
-	int hModel_;    //タンクモデルのハンドル
-	int camType_;   //カメラの種類
-	void SetFixedCam();
+	int hModel_;    //敵のハンドル
+	
 };
