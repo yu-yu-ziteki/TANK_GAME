@@ -12,12 +12,14 @@ Bullet::Bullet(GameObject* parent)
 void Bullet::Initialize()
 {
 	hModel_ = Model::Load("Bullet.fbx");
+	Collider* collider = new SphereCollider({ 0, 0, 0 }, 0.25f);//半径0.5の球体の当たり判定を作る
+	AddCollider(collider);//当たり判定をBulletに追加
 	assert(hModel_ >= 0);
 }
 
 void Bullet::Update()
 {
-	transform_.position_.y -= 0.08f;
+
 	//transform_.position_ = transform_.position_ + move_;//弾の進行方向に移動する
 	XMVECTOR vPos = XMLoadFloat3(&transform_.position_);//ロード：読み込み
 	XMVECTOR vMove = XMLoadFloat3(&move_);//ロード：読み込み

@@ -28,4 +28,5 @@ private:
 	int hModel_;    //タンクモデルのハンドル
 	XMFLOAT3 move_;//弾の進行方向
 
+
 };
